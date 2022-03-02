@@ -73,6 +73,9 @@
 }
 
 @media (max-width: $responsive-limit) { 
+  .welcome-panel{
+    width: 100%;
+  }
   .form-row{
     flex-direction: column !important;
     .form-group{
