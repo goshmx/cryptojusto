@@ -1,0 +1,82 @@
+@import '../../assets/styles/variables';
+
+.welcome-panel{
+  .welcome-form{
+    padding: 10px;
+    h2{
+      font-family: 'League Gothic', sans-serif;
+      font-size: 2em;
+      color: $white;
+      margin: 0;
+      padding: 0 0 20px 0;
+      text-align: center;
+    }
+    .loginForm{
+      .form-row{
+        display: flex;
+        flex-direction: row;
+        .form-group{
+          margin: 5px;    
+          width: 100%; 
+          display: flex;
+          flex-direction: column;
+          color: $white;
+          input{       
+            padding: 10px;
+            border-radius: $rounderCorner;
+            border: 1px solid $borderColor;
+            background-color: $backgroundAlpa;
+            &:focus{
+              outline: none;
+              border: 1px solid $borderColor;
+            }
+            &::placeholder {
+              color: #888;
+            }
+          }
+          label{
+            font-size: 0.8em;        
+            margin-bottom: 5px;
+          }
+          &.form-action{
+            button{
+              padding: 10px;
+              border-radius: $rounderCorner;
+              border: 1px solid $borderColor;
+              background-color: #118AB2;
+              cursor: pointer;
+              color: $white;
+              font-weight: bold;
+              &:focus{
+                outline: none;
+                border: 1px solid $borderColor;
+              }
+              &:hover{
+                background-color: darken($color: #118AB2, $amount: 5);
+              }
+            }
+          }
+          .formik-show-errors{
+            color: red;
+            font-size: 0.7em;
+            margin-top: 5px;
+          }
+        }     
+      }
+      hr{
+        margin: 10px 0;
+        border: none;
+        border-bottom: 1px solid $backgroundAlpa;
+      }
+    }
+  }
+}
+
+@media (max-width: $responsive-limit) { 
+  .form-row{
+    flex-direction: column !important;
+    .form-group{
+      width: auto !important;
+    }
+  }
+ }

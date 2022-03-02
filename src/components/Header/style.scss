@@ -1,0 +1,101 @@
+@import '../../assets/styles/variables';
+
+.header{
+  background-color: $backgroundAlpa;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 10px 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  .header-container{
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: $maxWidth;
+    .logo-container{
+      .link-home{
+        display:flex;
+        font-family: 'League Gothic', sans-serif;
+        font-size: 2em;
+        width: 200px;
+        text-decoration: none;
+        color: $white;
+        img{
+          width: 35px;
+          margin: 0 10px;
+        }
+        &:hover{
+          color: darken($color: $white, $amount: 5)
+        }  
+      }        
+    }
+    .menu-container{
+      width: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+      .user-panel{
+        color: $white;
+        position: relative;
+        .user-container{
+          font-size: 0.9em;
+          text-align: right;
+          cursor: pointer;
+          &:hover{
+            color: $black;
+          }
+        }
+        .current-mxn{
+          padding: 5px 0;
+          font-size: 0.7em;
+          color: $white;
+          text-align: right;
+        }
+        .user-menu{
+          color: $black;
+          font-size: 0.8em;
+          background-color: rgba(255,255,255,0.7);
+          backdrop-filter: blur(14px);
+          border-radius: $rounderCorner;
+          overflow: hidden;
+          position: absolute;
+          right: 0;
+          .user-menu-panel{
+            width: 180px;
+            min-width:10px;
+          } 
+          ul{
+            margin: 0;
+            padding: 10px;
+            list-style: none;            
+            li{
+              padding: 5px 0;     
+              &.logout{
+                border-top: 1px solid $borderColor;
+              }
+              span{
+                display: block;
+                color: lighten($color: $black, $amount: 50);
+                font-size: 0.8em;
+              }         
+              button{
+                margin: 10px 0 0 0;
+                width: 100%;
+                padding: 5px 0;
+                border-radius: $rounderCorner;
+                border: 1px solid $borderColor;
+                background-color: #118AB2;
+                cursor: pointer;
+                color: $white;
+                font-weight: bold;
+                &:hover{
+                  background-color: darken($color: #118AB2, $amount: 5);
+                }
+              }              
+            }
+          }         
+        }
+      }
+    }
+  }
+}

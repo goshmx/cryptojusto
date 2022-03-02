@@ -1,0 +1,162 @@
+@import '../../assets/styles/variables';
+
+.dashboard{
+  width: 100%;
+  max-width: 980px;
+  .dashboard-container{
+    display: flex;
+    flex-direction: column;
+    .dashboard-container-header{
+      width: 300px;
+      margin-left: 10px;
+      .tabs{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;        
+        background-color: $backgroundAlpha-secondary;   
+        border-radius: $rounderCorner $rounderCorner 0 0;
+        .tab{
+          width: 100%;          
+          padding: 10px 0;
+          cursor: pointer;
+          border-bottom: 2px solid transparent;
+          &.selected{
+            border-color: $white;
+            .tab-title{
+              color: $white;
+            }
+          }
+          &:hover{
+            border-color: $white;
+            .tab-title{
+              color: $white;
+            }
+          }
+          .tab-title{
+            text-align: center;
+            text-transform: uppercase;
+            font-family: 'League Gothic', sans-serif;
+            color: $backgroundAlpha-secondary;
+          }       
+        }
+      }      
+    }
+    .dashboard-container-body{
+      .dashboard-cards{
+        padding: 25px;
+        .cards-container{
+          display: flex;
+          flex-direction: row;
+        }
+      }
+    }
+    .dashboard-container-footer{
+      width: 100%;
+      max-width: 980px;
+      .convert-panel{
+        background-color: $backgroundAlpha-secondary;  
+        border-radius: 0 0 $rounderCorner $rounderCorner;
+        margin: 0 20px;
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        .convert{
+          margin-right: 15px;
+          color: $white;
+          min-width: 50px;
+          .convert-title{
+            font-size: 1.2em;
+            font-family: 'League Gothic', sans-serif;
+            text-transform: uppercase;
+            text-align: right;
+          }
+          .convert-result{
+            font-size: 1.2em;                        
+            text-align: right;
+            padding: 10px 0;
+          }
+          &.convert-mxn{
+            .mxn-title{
+              font-family: 'League Gothic', sans-serif;
+              font-size: 1.2em;
+              text-transform: uppercase;
+            }
+            .mxn-input{
+              display: flex;
+              flex-direction: row;
+              align-items: baseline;
+              label{
+                font-size: 0.8em;
+                margin-right: 5px;
+              }
+              input{
+                background-color: $backgroundAlpha-third;
+                border-radius: $rounderCorner;
+                border: 1px solid $borderColor;
+                padding: 10px;
+                color: $white;
+                max-width: 80px;
+                &::placeholder{
+                  color: $white;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $responsive-limit) { 
+  .dashboard{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .dashboard-container{
+       height: 100%;
+       display: flex;
+       flex-direction: column;
+      .dashboard-container-body{    
+        height: 100%;   
+        overflow: hidden;   
+        padding: 0 0 50px 0;        
+        .dashboard-cards{
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          overflow-y: scroll;
+          .cards-container{          
+            display: flex;
+            flex-direction: column;          
+          }
+        }
+      }    
+      .dashboard-container-footer{
+        .convert-panel{
+          margin: 10px -10px -10px;
+          .convert-mxn{
+            display: block;
+            width: 80px;
+            .mxn-title{
+              font-size: 1em !important;
+            }
+            .mxn-input input{
+              max-width: 50px !important;
+            }
+          }
+          .convert {
+            width: 100%;
+            .convert-title{
+              font-size:1em;
+            }
+            .convert-result{
+              font-size: 0.7em;
+            }
+          }
+        }
+      }  
+    }
+  }
+}
