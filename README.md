@@ -1,6 +1,81 @@
-# Getting Started with Create React App
+# CryptoJusto | React app for crypto monitoring.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App], Redux and functional components.
+
+## Currencies urk API's.
+- [Cryptocompare](https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,XRP&tsyms=USD)
+- [Coingecko](https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin,ethereum,ripple)
+- [Storm Gain](https://public-api.stormgain.com/api/v1/ticker)
+- [Freecurrencyapi](https://freecurrencyapi.net/api/v2/latest?apikey=dabc0050-99d6-11ec-8760-8fb87a0be7ae)
+
+## Components
+- **Header**. Contains header behavior and session info.
+- **Panel**. Component for contain information.
+- **WelcomeForm**. Form to set user data(firstname, lastname, phone & email).
+- **DashboardContainer**. Component for visualize currencies & MXN convertion.
+- **CurrencyCard**. Component for visualize currency and data logo of market passed as prop.
+
+## Project structure
+```
+.
+├── App.js
+├── App.scss
+├── App.test.js
+├── assets
+│   ├── styles
+│   │   └── variables.scss
+│   └── svg
+│       └── logo.svg
+├── components
+│   ├── CurrencyCard
+│   │   ├── CurrencyCard.jsx
+│   │   ├── index.jsx
+│   │   └── style.scss
+│   ├── DashboardContainer
+│   │   ├── DashboardContainer.jsx
+│   │   ├── index.jsx
+│   │   └── style.scss
+│   ├── Header
+│   │   ├── Header.jsx
+│   │   ├── index.jsx
+│   │   └── style.scss
+│   ├── Panel
+│   │   ├── Panel.jsx
+│   │   ├── index.jsx
+│   │   └── style.scss
+│   └── WelcomeForm
+│       ├── InputShowErrors.jsx
+│       ├── WelcomeForm.jsx
+│       ├── index.jsx
+│       └── style.scss
+├── index.js
+├── pages
+│   ├── Dashboard.jsx
+│   └── Welcome.jsx
+├── redux
+│   ├── actions
+│   │   ├── currencyActions.js
+│   │   ├── mxnActions.js
+│   │   └── userActions.js
+│   ├── constants
+│   │   └── action-types.js
+│   ├── reducers
+│   │   ├── currencyReducer.js
+│   │   ├── index.js
+│   │   ├── mxnReducer.js
+│   │   └── userReducer.js
+│   └── store.js
+├── reportWebVitals.js
+├── setupTests.js
+└── utils
+    ├── config
+    │   └── market-urls.js
+    ├── request
+    │   ├── requestMXN.js
+    │   └── requestMarkets.js
+    └── schema
+        └── welcomeSchema.js
+```
 
 ## Available Scripts
 
