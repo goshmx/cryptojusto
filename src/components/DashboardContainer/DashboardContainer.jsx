@@ -57,8 +57,8 @@ function Dashboard() {
   }
 
   const makeConvertion = (market) => {   
-    if(store.currency[currentCurrency][market][0]){ 
-    return ((mxnValue * store.mxn.value)*store.currency[currentCurrency][market][0].value).toFixed(2);
+    if(store.currency[currentCurrency][market][0]){       
+    return ((mxnValue / store.mxn.value)/store.currency[currentCurrency][market][0].value);
     }
     else{
       return 0;
@@ -113,7 +113,7 @@ function Dashboard() {
                 return (
                   <div key={index} className='convert convert-market'>
                     <div className='convert-title'>{market}</div>
-                    <div className='convert-result'>${makeConvertion(market)}</div>
+                    <div className='convert-result'>{makeConvertion(market)}</div>
                   </div>  
                 )
               })}
